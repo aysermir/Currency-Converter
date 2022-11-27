@@ -1,7 +1,7 @@
 from requests import get
 
 
-API_KEY = "9b15463923393c7f9a22"
+API_KEY = "022c790f3bad250bf978"
 URL = "https://free.currconv.com/"
 
 
