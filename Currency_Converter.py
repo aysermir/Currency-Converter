@@ -32,6 +32,12 @@ def exchange(currency1, currency2):
         return 
     return list(data.values())[0]
 
+def check_quit(word):
+    if(word=="quit" or word=="q"):
+        return True
+
+    return False
+
 def main():
     print("---Welcome to the Currency Converter---")
     print("To print the list of currencies, enter list")
@@ -44,7 +50,11 @@ def main():
             run = False
         elif(val=="convert"):
             base_curr = input("Enter base currency: ")
+            if(check_quit(base_curr)):
+                run = False
             convert_curr = input("Enter the currency you wish to convert to: ")
+            if(check_quit(base_curr)):
+                run = False
             conversion = exchange(base_curr, convert_curr)
             print(f"{base_curr} -> {convert_curr} = {conversion}")
         elif(val=="list"):
